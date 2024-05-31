@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Darkstar Blog</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Darkstar Blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 31 May 2024 15:43:58 +0200</lastBuildDate>
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally</title>
+      <link>/posts/unlock_the_power_of_open_source_ai/</link>
+      <pubDate>Fri, 31 May 2024 15:43:58 +0200</pubDate>
+      <guid>/posts/unlock_the_power_of_open_source_ai/</guid>
+      <description>Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally Link to heading I&amp;rsquo;ve recently come across a really cool tool for interacting with AI models called Fabric. Fabric is an open-source framework created by Daniel Miessler that can perform specific tasks using a large set of prompts. Today, I&amp;rsquo;m going to show you how I installed it on my system together with Ollama to run AI locally and show some examples of Fabric in action.</description>
+    </item>
+  </channel>
+</rss>
