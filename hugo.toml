@@ -18,7 +18,7 @@ style = "github-dark"
   info = "IT Hobbyist for nearly 30 years."
   description = "Darkstar's personal blog."
   keywords = "blog,developer,hobbyist,linux,it,hacking,security,tech,crypto,guides,opinions,personal"
-  avatarurl = "images/avatar.jpg"
+  avatarurl = "images/avatar.jpeg"
   #gravatar = "john.doe@example.com"
 
   faviconSVG = "/img/favicon.svg"
