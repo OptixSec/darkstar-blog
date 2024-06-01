@@ -1,10 +1,12 @@
-baseurl = "/"
+baseurl = "https://optixsec.github.io/darkstar-blog/"
 title = "Darkstar Blog"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
 paginate = 20
+
+relativeURLs = true
 
 [services]
 [services.disqus]
