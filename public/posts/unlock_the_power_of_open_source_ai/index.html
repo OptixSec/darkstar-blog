@@ -154,7 +154,7 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              5-minute read
+              4-minute read
             </span>
           </div>
           <div class="authors">
@@ -163,8 +163,6 @@
 
           <div class="categories">
   <i class="fa-solid fa-folder" aria-hidden="true"></i>
-    <a href="/categories/ai/">AI</a>
-      <span class="separator">•</span>
     <a href="/categories/guides/">Guides</a></div>
 
           <div class="tags">
@@ -216,27 +214,14 @@
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://ollama.com/install.sh | sh
 </span></span></code></pre></div><p>To confirm that Ollama has been correctly installed type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama -v
-</span></span></code></pre></div><h4 id="arch-linux">
-  Arch Linux
-  <a class="heading-link" href="#arch-linux">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<p>Ollama is available from the Arch Linux repository. You can simply install it from the command-line by typing:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S ollama
-</span></span></code></pre></div><p>If your GPU supports CUDA, I highly recommend you download the <code>ollama-cuda</code> package instead:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S ollama-cuda
-</span></span></code></pre></div><h3 id="running-ollama">
-  Running Ollama
-  <a class="heading-link" href="#running-ollama">
+</span></span></code></pre></div><h3 id="configuring-ollama">
+  Configuring Ollama
+  <a class="heading-link" href="#configuring-ollama">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p>If you installed Ollama using the Ollama installation script from the official website, you can skip the next step. The installation script from the Ollama website sets Ollama up as a service, making this step unnecessary. Let&rsquo;s start Ollama by typing:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama serve
-</span></span></code></pre></div><p>Ollama should be up and running now. We&rsquo;ll proceed to download the AI model we want to run on our computer:</p>
+<p>Ollama should be up and running now. We&rsquo;ll proceed to download the AI model we want to run on our computer:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama pull llama3:latest
 </span></span></code></pre></div><p>This will download the latest version of llama3 to our computer. We can start the model by typing:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run llama3:latest
@@ -284,7 +269,12 @@
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --setup
 </span></span></code></pre></div><p>Follow the instructions to add any API keys if desired. I suggest adding an API key for YouTube, as we&rsquo;ll be using it in one of the examples later. However, this is optional; you can proceed without adding any API keys and run the AI model locally. Now restart your shell to reload your configurations and test if Fabric is working by typing:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --help
-</span></span></code></pre></div><p>Awesome! We&rsquo;re ready to start exploring Fabric now.</p>
+</span></span></code></pre></div><p>Before continuing, I&rsquo;ve created an alias inside my shell&rsquo;s configuration file called <code>clip</code>. This alias outputs the content of the clipboard to the terminal, allowing us to pipe that content into Fabric for running various patterns against it. We can also use tools like <code>cat</code> or <code>echo</code> to pipe the content of a file or string into Fabric. Having the ability to use <code>clip</code> to pipe the content of your clipboard is very handy though! If you want to set up the alias yourself, you can add the following line to your shell&rsquo;s configuration file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias <span style="color:#79c0ff">clip</span><span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;xclip -selection clipboard -o&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: You need to have <code>xclip</code> installed on your system for this alias to work.</p>
+</blockquote>
+<p>After reloading your config, we&rsquo;re now ready to start exploring Fabric.</p>
 <h3 id="using-fabric">
   Using Fabric
   <a class="heading-link" href="#using-fabric">
@@ -295,16 +285,18 @@
 <p>Fabric uses patterns to complete various tasks.
 To get a list of available patterns, type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --list
-</span></span></code></pre></div><p>Let&rsquo;s try using Fabric to summarize the transcript of a YouTube video. I&rsquo;ll use <a href="https://youtu.be/HRAAzG_yDNY"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which provides insights on a upcoming NATO summit in Washington:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://youtu.be/HRAAzG_yDNY&#39;</span> | fabric -sp extract_wisdom
+</span></span></code></pre></div><p>Let&rsquo;s use Fabric to extract wisdom from the transcript of a YouTube video. I&rsquo;ll use <a href="https://youtu.be/HRAAzG_yDNY"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which is about an upcoming NATO summit in Washington:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://www.youtube.com/watch?v=JgsGH5IOCFE&#39;</span> | fabric -sp extract_wisdom
 </span></span></code></pre></div><p><img src="/images/fabric_guide/extract_wisdom.png" alt="Example of how Fabric is used to extract wisdom from a YouTube video transcript."></p>
 <p>Pretty awesome, right? The <code>-s</code> flag tells Fabric to stream the output. In other words, display the output of the command we gave it to the terminal. The <code>-p</code> flag tells Fabric which pattern we want to use against the input we gave it. Let&rsquo;s take it a step further and let Fabric write an essay based on the wisdom we extracted from the YouTube video by copying the output of the previous command and:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pbpaste | fabric -sp write_essay
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>clip | fabric -sp write_essay
 </span></span></code></pre></div><p><img src="/images/fabric_guide/write_essay.png" alt="Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript"></p>
-<p>You&rsquo;re probably wondering what <code>pbpaste</code> is and why your system doesn&rsquo;t recognize this command (unless you&rsquo;re running MacOS). It&rsquo;s an alias I created in my shell&rsquo;s config file that outputs the content of my clipboard so I can pipe it into a different command. When I run the command <code>pbpaste</code>, what it actually does is <code>xclip -selection clipboard -o</code>. You could also just run <code>xclip -selection clipboard -o | fabric -sp write_essay</code> but obviously <code>pbpaste</code> is a lot shorter and easier to write. You can also use <code>cat</code> or <code>echo</code> and other ways to pipe into Fabric.</p>
 <p>You can also pipe multiple patterns together, which is called a stitch in Fabric&rsquo;s terms:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pbpaste | fabric -p write_essay | fabric -sp improve_writing
-</span></span></code></pre></div><p><img src="/images/fabric_guide/stitching.png" alt="Example of stitching various Fabric patterns together"></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://youtu.be/XNQhDl4a9Ko&#39;</span> | fabric -p extract_wisdom_agents | fabric -sp write_tweet
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: <code>write_tweet</code> is a custom pattern I created myself. It still needs some tweaking.</p>
+</blockquote>
+<p><img src="/images/fabric_guide/stitching.png" alt="Example of stitching various Fabric patterns together"></p>
 <h3 id="conclusion">
   Conclusion
   <a class="heading-link" href="#conclusion">

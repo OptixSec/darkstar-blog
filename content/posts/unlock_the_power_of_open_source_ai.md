@@ -6,7 +6,7 @@ description = "A small guide about using the Fabric framework with locally ran A
 slug = ""
 authors = ["Darkstar"]
 tags = ["Ollama", "Fabric"]
-categories = ["AI", "Guides"]
+categories = ["Guides"]
 externalLink = ""
 series = []
 +++
@@ -35,27 +35,7 @@ To confirm that Ollama has been correctly installed type:
 ollama -v
 ```
 
-#### Arch Linux
-
-Ollama is available from the Arch Linux repository. You can simply install it from the command-line by typing:
-
-```bash
-sudo pacman -S ollama
-```
-
-If your GPU supports CUDA, I highly recommend you download the ```ollama-cuda``` package instead:
-
-```bash
-sudo pacman -S ollama-cuda
-```
-
-### Running Ollama
-
-If you installed Ollama using the Ollama installation script from the official website, you can skip the next step. The installation script from the Ollama website sets Ollama up as a service, making this step unnecessary. Let's start Ollama by typing:
-
-```bash
-ollama serve
-```
+### Configuring Ollama
 
 Ollama should be up and running now. We'll proceed to download the AI model we want to run on our computer:
 
@@ -123,7 +103,15 @@ Follow the instructions to add any API keys if desired. I suggest adding an API 
 fabric --help
 ```
 
-Awesome! We're ready to start exploring Fabric now.
+Before continuing, I've created an alias inside my shell's configuration file called `clip`. This alias outputs the content of the clipboard to the terminal, allowing us to pipe that content into Fabric for running various patterns against it. We can also use tools like `cat` or `echo` to pipe the content of a file or string into Fabric. Having the ability to use `clip` to pipe the content of your clipboard is very handy though! If you want to set up the alias yourself, you can add the following line to your shell's configuration file:
+
+```bash
+alias clip="xclip -selection clipboard -o"
+```
+
+> **Note**: You need to have `xclip` installed on your system for this alias to work.
+
+After reloading your config, we're now ready to start exploring Fabric.
 
 ### Using Fabric
 
@@ -134,10 +122,10 @@ To get a list of available patterns, type:
 fabric --list
 ```
 
-Let's try using Fabric to summarize the transcript of a YouTube video. I'll use [this](https://youtu.be/HRAAzG_yDNY) YouTube video, which provides insights on a upcoming NATO summit in Washington:
+Let's use Fabric to extract wisdom from the transcript of a YouTube video. I'll use [this](https://youtu.be/HRAAzG_yDNY) YouTube video, which is about an upcoming NATO summit in Washington:
 
 ```bash
-yt --transcript 'https://youtu.be/HRAAzG_yDNY' | fabric -sp extract_wisdom
+yt --transcript 'https://www.youtube.com/watch?v=JgsGH5IOCFE' | fabric -sp extract_wisdom
 ```
 
 ![Example of how Fabric is used to extract wisdom from a YouTube video transcript.](/images/fabric_guide/extract_wisdom.png)
@@ -145,18 +133,18 @@ yt --transcript 'https://youtu.be/HRAAzG_yDNY' | fabric -sp extract_wisdom
 Pretty awesome, right? The ```-s``` flag tells Fabric to stream the output. In other words, display the output of the command we gave it to the terminal. The ```-p``` flag tells Fabric which pattern we want to use against the input we gave it. Let's take it a step further and let Fabric write an essay based on the wisdom we extracted from the YouTube video by copying the output of the previous command and:
 
 ```bash
-pbpaste | fabric -sp write_essay
+clip | fabric -sp write_essay
 ```
 
 ![Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript](/images/fabric_guide/write_essay.png)
 
-You're probably wondering what `pbpaste` is and why your system doesn't recognize this command (unless you're running MacOS). It's an alias I created in my shell's config file that outputs the content of my clipboard so I can pipe it into a different command. When I run the command `pbpaste`, what it actually does is `xclip -selection clipboard -o`. You could also just run `xclip -selection clipboard -o | fabric -sp write_essay` but obviously `pbpaste` is a lot shorter and easier to write. You can also use `cat` or `echo` and other ways to pipe into Fabric.
-
 You can also pipe multiple patterns together, which is called a stitch in Fabric's terms:
 
 ```bash
-pbpaste | fabric -p write_essay | fabric -sp improve_writing
+yt --transcript 'https://youtu.be/XNQhDl4a9Ko' | fabric -p extract_wisdom_agents | fabric -sp write_tweet
 ```
+
+> **Note**: `write_tweet` is a custom pattern I created myself. It still needs some tweaking.
 
 ![Example of stitching various Fabric patterns together](/images/fabric_guide/stitching.png)
 
