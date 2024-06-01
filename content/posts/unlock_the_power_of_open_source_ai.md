@@ -128,7 +128,7 @@ Let's use Fabric to extract wisdom from the transcript of a YouTube video. I'll 
 yt --transcript 'https://www.youtube.com/watch?v=JgsGH5IOCFE' | fabric -sp extract_wisdom
 ```
 
-![Example of how Fabric is used to extract wisdom from a YouTube video transcript.](/images/fabric_guide/extract_wisdom.png)
+![Example of how Fabric is used to extract wisdom from a YouTube video transcript.](/static/images/fabric_guide/extract_wisdom.png)
 
 Pretty awesome, right? The ```-s``` flag tells Fabric to stream the output. In other words, display the output of the command we gave it to the terminal. The ```-p``` flag tells Fabric which pattern we want to use against the input we gave it. Let's take it a step further and let Fabric write an essay based on the wisdom we extracted from the YouTube video by copying the output of the previous command and:
 
@@ -136,7 +136,7 @@ Pretty awesome, right? The ```-s``` flag tells Fabric to stream the output. In o
 clip | fabric -sp write_essay
 ```
 
-![Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript](/images/fabric_guide/write_essay.png)
+![Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript](/static/images/fabric_guide/write_essay.png)
 
 You can also pipe multiple patterns together, which is called a stitch in Fabric's terms:
 
@@ -146,7 +146,7 @@ yt --transcript 'https://youtu.be/XNQhDl4a9Ko' | fabric -p extract_wisdom_agents
 
 > **Note**: `write_tweet` is a custom pattern I created myself. It still needs some tweaking.
 
-![Example of stitching various Fabric patterns together](/images/fabric_guide/stitching.png)
+![Example of stitching various Fabric patterns together](/static/images/fabric_guide/stitching.png)
 
 ### Conclusion
 
