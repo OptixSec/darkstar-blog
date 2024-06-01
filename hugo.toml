@@ -6,8 +6,6 @@ defaultcontentlanguage = "en"
 
 paginate = 20
 
-relativeURLs = true
-
 [services]
 [services.disqus]
 disqusShortname = "Darkstar"
