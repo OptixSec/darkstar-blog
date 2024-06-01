@@ -288,16 +288,16 @@
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --list
 </span></span></code></pre></div><p>Let&rsquo;s use Fabric to extract wisdom from the transcript of a YouTube video. I&rsquo;ll use <a href="https://youtu.be/HRAAzG_yDNY"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which is about an upcoming NATO summit in Washington:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://www.youtube.com/watch?v=JgsGH5IOCFE&#39;</span> | fabric -sp extract_wisdom
-</span></span></code></pre></div><p><img src="images/fabric_guide/extract_wisdom.png" alt="Example of how Fabric is used to extract wisdom from a YouTube video transcript."></p>
+</span></span></code></pre></div><p><img src="/images/fabric_guide/extract_wisdom.png" alt="Example of how Fabric is used to extract wisdom from a YouTube video transcript."></p>
 <p>Pretty awesome, right? The <code>-s</code> flag tells Fabric to stream the output. In other words, display the output of the command we gave it to the terminal. The <code>-p</code> flag tells Fabric which pattern we want to use against the input we gave it. Let&rsquo;s take it a step further and let Fabric write an essay based on the wisdom we extracted from the YouTube video by copying the output of the previous command and:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>clip | fabric -sp write_essay
-</span></span></code></pre></div><p><img src="images/fabric_guide/write_essay.png" alt="Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript"></p>
+</span></span></code></pre></div><p><img src="/images/fabric_guide/write_essay.png" alt="Example of Fabric writing an essay about the wisdom we extracted from a YouTube video transcript"></p>
 <p>You can also pipe multiple patterns together, which is called a stitch in Fabric&rsquo;s terms:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://youtu.be/XNQhDl4a9Ko&#39;</span> | fabric -p extract_wisdom_agents | fabric -sp write_tweet
 </span></span></code></pre></div><blockquote>
 <p><strong>Note</strong>: <code>write_tweet</code> is a custom pattern I created myself. It still needs some tweaking.</p>
 </blockquote>
-<p><img src="images/fabric_guide/stitching.png" alt="Example of stitching various Fabric patterns together"></p>
+<p><img src="/images/fabric_guide/stitching.png" alt="Example of stitching various Fabric patterns together"></p>
 <h3 id="conclusion">
   Conclusion
   <a class="heading-link" href="#conclusion">
