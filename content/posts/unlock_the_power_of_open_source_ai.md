@@ -127,7 +127,7 @@ Fabric uses patterns to complete various tasks, to get a list of available patte
 fabric --list
 ```
 
-Let's use Fabric to extract wisdom from the transcript of a YouTube video. I'll use [this](https://youtu.be/HRAAzG_yDNY) YouTube video, which is about an upcoming NATO summit in Washington:
+Let's use Fabric to extract wisdom from the transcript of a YouTube video. I'll use [this](https://www.youtube.com/watch?v=JgsGH5IOCFE) YouTube video, which is Daniel's video about creating custom patterns for use with Fabric:
 
 ```bash
 yt --transcript 'https://www.youtube.com/watch?v=JgsGH5IOCFE' | fabric -sp extract_wisdom

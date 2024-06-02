@@ -14,7 +14,7 @@
 
 <meta name="author" content="Darkstar">
 <meta name="description" content="A small guide about using the Fabric framework with locally ran AI">
-<meta name="keywords" content="blog,developer,hobbyist,linux,it,hacking,security,tech,crypto,guides,opinions,personal">
+<meta name="keywords" content="blog,developer,hobbyist,linux,it,hacking,security,tech,crypto,guides,opinions,personal,music,trance,production">
 
 
   <meta name="twitter:card" content="summary">
@@ -286,7 +286,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --changeDefaultModel llama3:latest
 </span></span></code></pre></div><p>Fabric uses patterns to complete various tasks, to get a list of available patterns, type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --list
-</span></span></code></pre></div><p>Let&rsquo;s use Fabric to extract wisdom from the transcript of a YouTube video. I&rsquo;ll use <a href="https://youtu.be/HRAAzG_yDNY"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which is about an upcoming NATO summit in Washington:</p>
+</span></span></code></pre></div><p>Let&rsquo;s use Fabric to extract wisdom from the transcript of a YouTube video. I&rsquo;ll use <a href="https://www.youtube.com/watch?v=JgsGH5IOCFE"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which is Daniel&rsquo;s video about creating custom patterns for use with Fabric:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://www.youtube.com/watch?v=JgsGH5IOCFE&#39;</span> | fabric -sp extract_wisdom
 </span></span></code></pre></div><p><img src="/darkstar-blog/images/fabric_guide/extract_wisdom.png" alt="Example of how Fabric is used to extract wisdom from a YouTube video transcript."></p>
 <p>Pretty awesome, right? The <code>-s</code> flag tells Fabric to stream the output. In other words, display the output of the command we gave it to the terminal. The <code>-p</code> flag tells Fabric which pattern we want to use against the input we gave it. Let&rsquo;s take it a step further and let Fabric write an essay based on the wisdom we extracted from the YouTube video by copying the output of the previous command and:</p>

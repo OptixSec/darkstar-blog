@@ -15,9 +15,9 @@ style = "github-dark"
 
 [params]
   author = "Darkstar"
-  info = "IT Hobbyist for nearly 30 years."
+  info = "Tech enthusiast by day, Trance aficionado by night."
   description = "Darkstar's personal blog."
-  keywords = "blog,developer,hobbyist,linux,it,hacking,security,tech,crypto,guides,opinions,personal"
+  keywords = "blog,developer,hobbyist,linux,it,hacking,security,tech,crypto,guides,opinions,personal,music,trance,production"
   avatarurl = "images/avatar.jpeg"
   #gravatar = "john.doe@example.com"
 

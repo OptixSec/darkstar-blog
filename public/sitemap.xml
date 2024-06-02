@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://optixsec.github.io/darkstar-blog/</loc>
+    <lastmod>2024-06-02T17:23:20+02:00</lastmod>
+  </url><url>
     <loc>https://optixsec.github.io/darkstar-blog/authors/</loc>
     <lastmod>2024-05-31T15:43:58+02:00</lastmod>
   </url><url>
@@ -9,9 +12,6 @@
     <lastmod>2024-05-31T15:43:58+02:00</lastmod>
   </url><url>
     <loc>https://optixsec.github.io/darkstar-blog/authors/darkstar/</loc>
-    <lastmod>2024-05-31T15:43:58+02:00</lastmod>
-  </url><url>
-    <loc>https://optixsec.github.io/darkstar-blog/</loc>
     <lastmod>2024-05-31T15:43:58+02:00</lastmod>
   </url><url>
     <loc>https://optixsec.github.io/darkstar-blog/tags/fabric/</loc>
