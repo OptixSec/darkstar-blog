@@ -1,7 +1,7 @@
 +++
 title = 'About'
 date = 2024-06-02T17:23:20+02:00
-draft = true
+draft = false
 +++
 
 I'm **Darkstar**, a 35-year-old tech enthusiast with a thirst for knowledge in computer-related fields. My diverse background spans hardware, software development, operating systems, and cybersecurity, allowing me to explore multiple facets of the IT world.
