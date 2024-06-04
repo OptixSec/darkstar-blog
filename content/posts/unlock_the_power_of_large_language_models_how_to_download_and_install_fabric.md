@@ -1,11 +1,11 @@
 +++ 
 draft = false
 date = 2024-06-02T15:43:58+02:00
-title = "Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally"
-description = "A small guide about using the Fabric framework with locally ran AI"
+title = "Unlock the Power of Language Language Models: How to Download and Install Fabric"
+description = "A small guide about using the Fabric framework to augment your interaction with large language models."
 slug = ""
 authors = ["Darkstar"]
-tags = ["Ollama", "Llama3", "Fabric"]
+tags = ["Ollama", "Fabric"]
 categories = ["Guides", "AI"]
 externalLink = ""
 series = []

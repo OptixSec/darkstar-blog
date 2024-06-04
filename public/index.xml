@@ -16,10 +16,10 @@
       <description>I&amp;rsquo;m Darkstar, a 35-year-old tech enthusiast with a thirst for knowledge in computer-related fields. My diverse background spans hardware, software development, operating systems, and cybersecurity, but I can comfortably admit I haven&amp;rsquo;t mastered any of them.&#xA;When I&amp;rsquo;m not exploring the latest technology trends, you can find me indulging in my passion for music. A self-proclaimed audiophile, I enjoy a wide range of genres from classical to electronic to black metal.</description>
     </item>
     <item>
-      <title>Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally</title>
-      <link>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_open_source_ai/</link>
+      <title>Unlock the Power of Language Language Models: How to Download and Install Fabric</title>
+      <link>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_large_language_models_how_to_download_and_install_fabric/</link>
       <pubDate>Sun, 02 Jun 2024 15:43:58 +0200</pubDate>
-      <guid>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_open_source_ai/</guid>
+      <guid>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_large_language_models_how_to_download_and_install_fabric/</guid>
       <description>I&amp;rsquo;ve recently come across a really cool tool for interacting with AI models called Fabric. Fabric is an open-source framework created by Daniel Miessler that can perform specific tasks using a large set of prompts. Today, I&amp;rsquo;m going to show you how I installed it on my system and use it together with Ollama to run AI on my local machine and show you some examples of Fabric in action.</description>
     </item>
     <item>
