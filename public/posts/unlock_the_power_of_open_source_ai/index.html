@@ -28,9 +28,10 @@
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-05-31T15:43:58+02:00">
-    <meta property="article:modified_time" content="2024-05-31T15:43:58+02:00">
+    <meta property="article:published_time" content="2024-06-02T15:43:58+02:00">
+    <meta property="article:modified_time" content="2024-06-02T15:43:58+02:00">
     <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="Llama3">
     <meta property="article:tag" content="Fabric">
 
 
@@ -148,13 +149,13 @@
           <div class="date">
             <span class="posted-on">
               <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-              <time datetime="2024-05-31T15:43:58&#43;02:00">
-                May 31, 2024
+              <time datetime="2024-06-02T15:43:58&#43;02:00">
+                June 2, 2024
               </time>
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              5-minute read
+              4-minute read
             </span>
           </div>
           <div class="authors">
@@ -163,12 +164,18 @@
 
           <div class="categories">
   <i class="fa-solid fa-folder" aria-hidden="true"></i>
-    <a href="/darkstar-blog/categories/guides/">Guides</a></div>
+    <a href="/darkstar-blog/categories/guides/">Guides</a>
+      <span class="separator">•</span>
+    <a href="/darkstar-blog/categories/ai/">AI</a></div>
 
           <div class="tags">
   <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
       <a href="/darkstar-blog/tags/ollama/">Ollama</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/darkstar-blog/tags/llama3/">Llama3</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
@@ -180,89 +187,35 @@
 
       <div class="post-content">
         
-        <h2 id="unlock-the-power-of-open-source-ai-installing-ollama-fabric-and-running-ai-locally">
-  Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally
-  <a class="heading-link" href="#unlock-the-power-of-open-source-ai-installing-ollama-fabric-and-running-ai-locally">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<p>I&rsquo;ve recently come across a really cool tool for interacting with AI models called <a href="https://github.com/danielmiessler/fabric"  class="external-link" target="_blank" rel="noopener">Fabric</a>. Fabric is an open-source framework created by <a href="https://github.com/danielmiessler/"  class="external-link" target="_blank" rel="noopener">Daniel Miessler</a> that can perform specific tasks using a large set of prompts. Today, I&rsquo;m going to show you how I installed it on my system together with <a href="https://ollama.com/"  class="external-link" target="_blank" rel="noopener">Ollama</a> to run AI locally and show some examples of Fabric in action.</p>
-<h2 id="ollama">
-  Ollama
-  <a class="heading-link" href="#ollama">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="installing-ollama">
-  Installing Ollama
-  <a class="heading-link" href="#installing-ollama">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<p>You can use Fabric with remote AI services like <a href="https://chatgpt.com/"  class="external-link" target="_blank" rel="noopener">ChatGPT</a>, but you also have the option to run a local model. I&rsquo;ve chosen a local model because I prioritize privacy. We&rsquo;ll download Ollama and the Llama3 AI model so we can employ Fabric to interact with it once we&rsquo;ve installed it later in this guide.</p>
-<h4 id="ollama-linux-install-script">
-  Ollama Linux Install Script
-  <a class="heading-link" href="#ollama-linux-install-script">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<p>The official Ollama website offers a convenient installation script for Linux users, which simplifies the process of downloading and installing Ollama while also setting it up as a service.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://ollama.com/install.sh | sh
-</span></span></code></pre></div><p>To confirm that Ollama has been correctly installed type:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama -v
-</span></span></code></pre></div><h3 id="configuring-ollama">
-  Configuring Ollama
-  <a class="heading-link" href="#configuring-ollama">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<p>Ollama should be up and running now. We&rsquo;ll proceed to download the AI model we want to run on our computer:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama pull llama3:latest
-</span></span></code></pre></div><p>This will download the latest version of llama3 to our computer. We can start the model by typing:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ollama run llama3:latest
-</span></span></code></pre></div><p>If everything went succesfully we should get a prompt like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt;&gt;&gt; Send a message <span style="color:#ff7b72;font-weight:bold">(</span>/? <span style="color:#ff7b72">for</span> help<span style="color:#ff7b72;font-weight:bold">)</span>
-</span></span></code></pre></div><p>You can have a little chat with the AI now if you want or you can type <code>/bye</code> to quit and proceed with setting up Fabric on your computer.</p>
-<h2 id="fabric">
-  Fabric
-  <a class="heading-link" href="#fabric">
-    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="installing-fabric">
+        <p>I&rsquo;ve recently come across a really cool tool for interacting with AI models called <a href="https://github.com/danielmiessler/fabric"  class="external-link" target="_blank" rel="noopener">Fabric</a>. Fabric is an open-source framework created by <a href="https://github.com/danielmiessler/"  class="external-link" target="_blank" rel="noopener">Daniel Miessler</a> that can perform specific tasks using a large set of prompts. Today, I&rsquo;m going to show you how I installed it on my system and use it together with <a href="https://ollama.com/"  class="external-link" target="_blank" rel="noopener">Ollama</a> to run AI on my local machine and show you some examples of Fabric in action.</p>
+<h2 id="installing-fabric">
   Installing Fabric
   <a class="heading-link" href="#installing-fabric">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-<p>Before installing Fabric, ensure you have at least <strong>Python 3.10</strong> or newer and <strong>pipx</strong> installed on your system.</p>
-<h4 id="cloning-the-repo">
+</h2>
+<p>Before installing Fabric, ensure you have at least <strong>Ollama</strong>, <strong>Python 3.10</strong> or newer and <strong>pipx</strong> installed on your system.</p>
+<h3 id="cloning-the-repo">
   Cloning the repo
   <a class="heading-link" href="#cloning-the-repo">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h4>
+</h3>
 <p>Decide where on your system you want to store the Fabric project. I decided to put it in <code>~/repos</code>. Now navigate to that directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd ~/repos/
 </span></span></code></pre></div><p>Clone the Fabric repository to your current directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/danielmiessler/fabric.git
 </span></span></code></pre></div><p>When done, navigate to the main Fabric directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd fabric/
-</span></span></code></pre></div><h4 id="install-fabric">
+</span></span></code></pre></div><h3 id="install-fabric">
   Install Fabric
   <a class="heading-link" href="#install-fabric">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h4>
+</h3>
 <p>Continue by installing Fabric on your computer by typing:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipx install .
 </span></span></code></pre></div><p>Run the setup script:</p>
@@ -275,16 +228,19 @@
 <p><strong>Note</strong>: You need to have <code>xclip</code> installed on your system for this alias to work.</p>
 </blockquote>
 <p>After reloading your config, we&rsquo;re now ready to start exploring Fabric.</p>
-<h3 id="using-fabric">
+<h2 id="using-fabric">
   Using Fabric
   <a class="heading-link" href="#using-fabric">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
+</h2>
 <p>Let&rsquo;s set the default model to <code>llama3:latest</code> so we don&rsquo;t have to specify which model we want to use everytime we use Fabric:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --changeDefaultModel llama3:latest
-</span></span></code></pre></div><p>Fabric uses patterns to complete various tasks, to get a list of available patterns, type:</p>
+</span></span></code></pre></div><blockquote>
+<p><strong>Note</strong>: You can obviously change this to any other model you want to use instead.</p>
+</blockquote>
+<p>Fabric uses patterns to complete various tasks, to get a list of available patterns, type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fabric --list
 </span></span></code></pre></div><p>Let&rsquo;s use Fabric to extract wisdom from the transcript of a YouTube video. I&rsquo;ll use <a href="https://www.youtube.com/watch?v=JgsGH5IOCFE"  class="external-link" target="_blank" rel="noopener">this</a> YouTube video, which is Daniel&rsquo;s video about creating custom patterns for use with Fabric:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt --transcript <span style="color:#a5d6ff">&#39;https://www.youtube.com/watch?v=JgsGH5IOCFE&#39;</span> | fabric -sp extract_wisdom
@@ -298,14 +254,14 @@
 <p><strong>Note</strong>: <code>write_tweet</code> is a custom pattern I created myself. It still needs some tweaking.</p>
 </blockquote>
 <p><img src="/darkstar-blog/images/fabric_guide/stitching.png" alt="Example of stitching various Fabric patterns together"></p>
-<h3 id="conclusion">
+<h2 id="conclusion">
   Conclusion
   <a class="heading-link" href="#conclusion">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h3>
-<p>These are the basics of setting up Ollama, downloading and running an AI model on your local system, and using Fabric to augment your interactions with AI. There are many more patterns you can explore, but I&rsquo;ll leave that to you! I might do another guide in the future on how to create your own patterns and use them with Fabric. And don&rsquo;t forget to check out the Fabric documentation to discover more about how you can utilize Fabric. I hope you learned something, happy hacking!</p>
+</h2>
+<p>These are the basics of setting up Fabric and using it to augment you in your interactions with AI. There are many more patterns you can explore, but I&rsquo;ll leave that to you! I might do another guide in the future on how to create your own patterns and use them with Fabric. And don&rsquo;t forget to check out the Fabric documentation to discover more about how you can utilize Fabric. I hope you learned something, happy hacking!</p>
 
       </div>
 

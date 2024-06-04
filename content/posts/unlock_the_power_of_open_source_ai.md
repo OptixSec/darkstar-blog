@@ -1,69 +1,23 @@
 +++ 
 draft = false
-date = 2024-05-31T15:43:58+02:00
+date = 2024-06-02T15:43:58+02:00
 title = "Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally"
 description = "A small guide about using the Fabric framework with locally ran AI"
 slug = ""
 authors = ["Darkstar"]
-tags = ["Ollama", "Fabric"]
-categories = ["Guides"]
+tags = ["Ollama", "Llama3", "Fabric"]
+categories = ["Guides", "AI"]
 externalLink = ""
 series = []
 +++
 
-## Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally
+I've recently come across a really cool tool for interacting with AI models called [Fabric](https://github.com/danielmiessler/fabric). Fabric is an open-source framework created by [Daniel Miessler](https://github.com/danielmiessler/) that can perform specific tasks using a large set of prompts. Today, I'm going to show you how I installed it on my system and use it together with [Ollama](https://ollama.com/) to run AI on my local machine and show you some examples of Fabric in action.
 
-I've recently come across a really cool tool for interacting with AI models called [Fabric](https://github.com/danielmiessler/fabric). Fabric is an open-source framework created by [Daniel Miessler](https://github.com/danielmiessler/) that can perform specific tasks using a large set of prompts. Today, I'm going to show you how I installed it on my system together with [Ollama](https://ollama.com/) to run AI locally and show some examples of Fabric in action.
+## Installing Fabric
 
-## Ollama
+Before installing Fabric, ensure you have at least **Ollama**, **Python 3.10** or newer and **pipx** installed on your system.
 
-### Installing Ollama
-
-You can use Fabric with remote AI services like [ChatGPT](https://chatgpt.com/), but you also have the option to run a local model. I've chosen a local model because I prioritize privacy. We'll download Ollama and the Llama3 AI model so we can employ Fabric to interact with it once we've installed it later in this guide.
-
-#### Ollama Linux Install Script
-
-The official Ollama website offers a convenient installation script for Linux users, which simplifies the process of downloading and installing Ollama while also setting it up as a service.
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-To confirm that Ollama has been correctly installed type:
-
-```bash
-ollama -v
-```
-
-### Configuring Ollama
-
-Ollama should be up and running now. We'll proceed to download the AI model we want to run on our computer:
-
-```bash
-ollama pull llama3:latest
-```
-
-This will download the latest version of llama3 to our computer. We can start the model by typing:
-
-```bash
-ollama run llama3:latest
-```
-
-If everything went succesfully we should get a prompt like this:
-
-```bash
->>> Send a message (/? for help)
-```
-
-You can have a little chat with the AI now if you want or you can type ```/bye``` to quit and proceed with setting up Fabric on your computer.
-
-## Fabric
-
-### Installing Fabric
-
-Before installing Fabric, ensure you have at least **Python 3.10** or newer and **pipx** installed on your system.
-
-#### Cloning the repo
+### Cloning the repo
 
 Decide where on your system you want to store the Fabric project. I decided to put it in `~/repos`. Now navigate to that directory:
 
@@ -83,7 +37,7 @@ When done, navigate to the main Fabric directory:
 cd fabric/
 ```
 
-#### Install Fabric
+### Install Fabric
 
 Continue by installing Fabric on your computer by typing:
 
@@ -113,13 +67,15 @@ alias clip="xclip -selection clipboard -o"
 
 After reloading your config, we're now ready to start exploring Fabric.
 
-### Using Fabric
+## Using Fabric
 
 Let's set the default model to `llama3:latest` so we don't have to specify which model we want to use everytime we use Fabric:
 
 ```bash
 fabric --changeDefaultModel llama3:latest
 ```
+
+> **Note**: You can obviously change this to any other model you want to use instead.
 
 Fabric uses patterns to complete various tasks, to get a list of available patterns, type:
 
@@ -153,6 +109,6 @@ yt --transcript 'https://youtu.be/XNQhDl4a9Ko' | fabric -p extract_wisdom_agents
 
 ![Example of stitching various Fabric patterns together](/darkstar-blog/images/fabric_guide/stitching.png)
 
-### Conclusion
+## Conclusion
 
-These are the basics of setting up Ollama, downloading and running an AI model on your local system, and using Fabric to augment your interactions with AI. There are many more patterns you can explore, but I'll leave that to you! I might do another guide in the future on how to create your own patterns and use them with Fabric. And don't forget to check out the Fabric documentation to discover more about how you can utilize Fabric. I hope you learned something, happy hacking!
+These are the basics of setting up Fabric and using it to augment you in your interactions with AI. There are many more patterns you can explore, but I'll leave that to you! I might do another guide in the future on how to create your own patterns and use them with Fabric. And don't forget to check out the Fabric documentation to discover more about how you can utilize Fabric. I hope you learned something, happy hacking!

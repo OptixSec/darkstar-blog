@@ -6,14 +6,21 @@
     <description>Recent content in Posts on Darkstar Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 31 May 2024 15:43:58 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2024 15:43:58 +0200</lastBuildDate>
     <atom:link href="https://optixsec.github.io/darkstar-blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally</title>
       <link>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_open_source_ai/</link>
-      <pubDate>Fri, 31 May 2024 15:43:58 +0200</pubDate>
+      <pubDate>Sun, 02 Jun 2024 15:43:58 +0200</pubDate>
       <guid>https://optixsec.github.io/darkstar-blog/posts/unlock_the_power_of_open_source_ai/</guid>
-      <description>Unlock the Power of Open-Source AI: Installing Ollama, Fabric, and Running AI Locally Link to heading I&amp;rsquo;ve recently come across a really cool tool for interacting with AI models called Fabric. Fabric is an open-source framework created by Daniel Miessler that can perform specific tasks using a large set of prompts. Today, I&amp;rsquo;m going to show you how I installed it on my system together with Ollama to run AI locally and show some examples of Fabric in action.</description>
+      <description>I&amp;rsquo;ve recently come across a really cool tool for interacting with AI models called Fabric. Fabric is an open-source framework created by Daniel Miessler that can perform specific tasks using a large set of prompts. Today, I&amp;rsquo;m going to show you how I installed it on my system and use it together with Ollama to run AI on my local machine and show you some examples of Fabric in action.</description>
+    </item>
+    <item>
+      <title>No Cloud Needed: How to Install and Run Large Language Models with Ollama</title>
+      <link>https://optixsec.github.io/darkstar-blog/posts/no_cloud_needed_how_to_install_and_run_large_language_models_with_ollama/</link>
+      <pubDate>Fri, 31 May 2024 14:30:02 +0200</pubDate>
+      <guid>https://optixsec.github.io/darkstar-blog/posts/no_cloud_needed_how_to_install_and_run_large_language_models_with_ollama/</guid>
+      <description>Are you ready to unlock the power of running LLMs locally on your Linux machine? In this post, I&amp;rsquo;ll walk you through the installation process, from a one-liner command that takes care of everything to a manual install.&#xA;Installing Ollama with One-Liner Command Link to heading For those who prefer simplicity, installing Ollama is as easy as running this command: curl -fsSL https://ollama.com/install.sh | sh. This one-liner will install Ollama and its dependencies, saving you the trouble of manually downloading and configuring everything.</description>
     </item>
   </channel>
 </rss>
