@@ -61,7 +61,12 @@ sudo nano /etc/systemd/system/ollama.service
 ```
 
 - Reload the systemd daemon: `sudo systemctl daemon-reload`
-- Enable and start the Ollama service: `sudo systemctl enable ollama` and `sudo systemctl start ollama`
+- Enable and start the Ollama service:
+
+```bash
+sudo systemctl enable ollama
+sudo systemctl start ollama
+```
 
 ## Using Ollama
 
@@ -89,11 +94,21 @@ Finally, to remove a downloaded model, execute:
 
 ## Updating Ollama
 
-To update Ollama, you can run the installation script again: `curl -fsSL https://ollama.com/install.sh | sh`. Alternatively, you can download the latest Ollama binary directly and replace the existing one.
+To update Ollama, you can run the installation script again:
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+Alternatively, you can download the latest Ollama binary directly and replace the existing one.
 
 ## Viewing Logs
 
-To view logs of Ollama running as a startup service, use the `journalctl` command: `sudo journalctl -u ollama`
+To view logs of Ollama running as a startup service, use the `journalctl` command:
+
+```bash
+sudo journalctl -u ollama
+```
 
 ## Uninstalling Ollama
 

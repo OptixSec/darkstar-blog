@@ -236,9 +236,11 @@
 </span></span><span style="display:flex;"><span> WantedBy<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">multi-user.target`</span>
 </span></span></code></pre></div><ul>
 <li>Reload the systemd daemon: <code>sudo systemctl daemon-reload</code></li>
-<li>Enable and start the Ollama service: <code>sudo systemctl enable ollama</code> and <code>sudo systemctl start ollama</code></li>
+<li>Enable and start the Ollama service:</li>
 </ul>
-<h2 id="using-ollama">
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable ollama
+</span></span><span style="display:flex;"><span>sudo systemctl start ollama
+</span></span></code></pre></div><h2 id="using-ollama">
   Using Ollama
   <a class="heading-link" href="#using-ollama">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
@@ -265,7 +267,9 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>To update Ollama, you can run the installation script again: <code>curl -fsSL https://ollama.com/install.sh | sh</code>. Alternatively, you can download the latest Ollama binary directly and replace the existing one.</p>
+<p>To update Ollama, you can run the installation script again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://ollama.com/install.sh | sh
+</span></span></code></pre></div><p>Alternatively, you can download the latest Ollama binary directly and replace the existing one.</p>
 <h2 id="viewing-logs">
   Viewing Logs
   <a class="heading-link" href="#viewing-logs">
@@ -273,8 +277,9 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<p>To view logs of Ollama running as a startup service, use the <code>journalctl</code> command: <code>sudo journalctl -u ollama</code></p>
-<h2 id="uninstalling-ollama">
+<p>To view logs of Ollama running as a startup service, use the <code>journalctl</code> command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo journalctl -u ollama
+</span></span></code></pre></div><h2 id="uninstalling-ollama">
   Uninstalling Ollama
   <a class="heading-link" href="#uninstalling-ollama">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
